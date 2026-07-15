@@ -1,246 +1,216 @@
-# Guía — TODO.md y organización personal del desarrollo
+# Guía de Workflow Profesional: Del Caos Mental al Commit Perfecto
 
 ## Objetivo
 
-Aprender a organizar tareas, ideas y procesos de desarrollo de manera profesional y sostenible.
+Aprender a organizar tareas, estructurar el desarrollo por cambios lógicos y mantener un historial de Git limpio, profesional y sostenible.
 
-Esta guía está pensada especialmente para desarrolladores/as autodidactas que trabajan en proyectos personales y necesitan reducir dispersión mental.
-
----
-
-# Qué es un TODO.md
-
-Es un archivo simple donde registras:
-
-- tareas pendientes
-- bugs
-- mejoras
-- ideas futuras
-- refactors
-- problemas detectados
+Esta guía está diseñada para desarrolladores/as que trabajan de forma autónoma y buscan reducir la dispersión mental, optimizar su tiempo y trabajar con los mismos estándares de calidad que un equipo de alto rendimiento.
 
 ---
 
-# Por qué usarlo
+# Parte 1: El `TODO.md` y el Foco Diario
 
-Muchos desarrolladores junior cometen este error:
+Muchos desarrolladores cometen el mismo error cuando programan solos:
 
-Están programando una cosa → recuerdan otra idea → cambian de tarea → aparece otro problema → terminan agotados y sin cerrar nada.
+> Estás desarrollando una pantalla ➜ recuerdas una idea de diseño ➜ cambias de archivo ➜ encuentras un bug en la base de datos ➜ intentas arreglarlo ➜ terminas el día agotado, con diez archivos modificados y sin haber cerrado nada.
 
-El TODO.md ayuda a:
+Para evitar esto, tu mejor amigo es el archivo `TODO.md`.
 
-- mantener foco
-- reducir ansiedad
-- evitar olvidar ideas
-- terminar tareas
-- ordenar prioridades
+## ¿Qué es y dónde va?
 
----
+Es un archivo de texto simple (`.md`) que vive en la raíz de tu proyecto.
 
-# Regla principal
-
-NO cambiar de tarea constantemente.
-
-Cuando aparezca una idea nueva:
-
-→ escribirla
-→ volver a la tarea actual
-
----
-
-# Dónde crear el archivo
-
-En la raíz del proyecto.
-
-Ejemplo:
-
-project/
+```text
+mi-proyecto/
 ├── app/
 ├── tests/
 ├── TODO.md
-├── README.md
+└── README.md
+```
+
+Su única regla es:
+
+> **Cuando aparezca una idea o un bug mientras programas, no cambies de tarea. Escríbelo en el `TODO.md` y vuelve a lo que estabas haciendo.**
 
 ---
 
-# Estructura recomendada
+## Estructura sugerida para tu `TODO.md`
 
-## Ejemplo simple
-
+```md
 # TODO
 
-## Alta prioridad
-- Corregir validación login
-- Resolver bug SQLite
+## 🔴 Alta Prioridad (Para la sesión actual)
 
-## Mejoras futuras
-- Agregar paginación
-- Mejorar diseño UI
+- [ ] Corregir validación de contraseñas en login.
+- [ ] Resolver bug de duplicados en base de datos.
 
-## Ideas
-- Implementar modo oscuro
+## 🟡 En Progreso
 
----
+- [ ] Refactorizar módulo de conexión Alpaca API.
 
-# Organización por estados
+## 🟢 Mejoras Futuras / Backlog
 
-También puedes usar:
+- [ ] Implementar modo oscuro.
+- [ ] Agregar paginación en la tabla de transacciones.
 
-# TODO
+## 🐞 Bugs Detectados
 
-## Pendiente
-- Crear endpoint users
-
-## En progreso
-- Refactor auth service
-
-## Completado
-- Configurar GitHub
+- [ ] El botón de cancelar no limpia el formulario de registro.
+```
 
 ---
 
-# Regla profesional importante
+# Parte 2: Los 10 Principios del Cambio Lógico
 
-Las tareas deben ser:
-- pequeñas
-- concretas
-- accionables
+Una vez que tienes tus tareas claras en el `TODO.md`, ¿cómo las llevas al código?
 
-❌ Malo:
-"mejorar proyecto"
+Aquí es donde entra la madurez técnica.
 
-✅ Mejor:
-"agregar validación al formulario login"
+**No programamos por archivos, programamos por cambios lógicos.**
 
 ---
 
-# El método de una sola tarea
+## 1. Pensar en funcionalidades, desarrollar por cambios lógicos
 
-Antes de comenzar:
+No organices tu jornada pensando en:
 
-Define SOLO una tarea principal.
+- "Hoy voy a escribir modelos."
+- "Hoy haré vistas."
 
-Ejemplo:
-
-"Hacer funcionar la autenticación"
-
-Esto reduce muchísimo:
-- dispersión
-- multitarea caótica
-- agotamiento mental
+Enfócate en funcionalidades concretas y divídelas en los pasos lógicos más pequeños posibles.
 
 ---
 
-# Flujo recomendado
+## 2. El commit representa un único cambio lógico
 
-## 1. Elegir tarea principal
+Un commit no es una copia de seguridad que se hace al final del día.
 
-## 2. Programar SOLO eso
+Un commit debe responder con precisión a la pregunta:
 
-## 3. Si aparecen ideas nuevas
+> **¿Qué añade, modifica o soluciona este cambio específico?**
 
-Agregar a:
-TODO.md
+La respuesta debería caber en una sola línea clara.
 
-NO cambiar inmediatamente de tarea.
+```bash
+git commit -m "feat: implementar modelo de socios"
 
-## 4. Terminar tarea actual
-
-## 5. Commit
-
-git add .
-git commit -m "feat: agregar validación login"
+git commit -m "fix: corregir validación de email"
+```
 
 ---
 
-# Relación entre TODO y Git
+## 3. Una funcionalidad completa requiere varios commits
 
-Git guarda:
-- cambios
+No confundas un commit atómico (un solo cambio lógico) con una funcionalidad completa (el resultado final).
 
-TODO guarda:
-- intención
-- planificación
-- próximos pasos
-
-Ambos juntos mejoran muchísimo el flujo de trabajo.
+Un módulo CRUD completo normalmente se construye uniendo cuatro o cinco commits pequeños y estables.
 
 ---
 
-# Buenas prácticas
+## 4. El patrón de diseño organiza el código, no los commits
 
-## Separar bugs de ideas
+Si estás usando MVC (Modelo-Vista-Controlador), es perfectamente normal que un mismo commit modifique archivos en la vista, el controlador y el modelo al mismo tiempo, siempre que todos esos cambios pertenezcan a la misma acción lógica.
 
-## Bugs
-- Error al eliminar usuarios
+Por ejemplo:
 
-## Mejoras
-- Agregar filtros
+> **Permitir la edición de un usuario.**
 
 ---
 
-## Priorizar
+## 5. Trabajar siempre sobre ramas de funcionalidad (Features)
 
-Puedes usar:
-[Alta]
-[Media]
-[Baja]
+La rama `main` de tu repositorio debe estar siempre limpia y lista para producción.
 
----
+Toda nueva idea o tarea debe nacer en su propia rama de desarrollo.
 
-## Eliminar tareas completadas
+### 1. Crear una rama temporal
 
-O moverlas a:
-## Completado
+```bash
+git checkout -b feature/nombre-tarea
+```
 
-Esto ayuda a visualizar progreso.
+Trabaja aislado del código principal para poder experimentar sin miedo a romper la versión estable.
 
----
+### 2. Desarrollar con commits atómicos
 
-# Consejo importante para autodidactas
+Avanza resolviendo pequeños cambios lógicos y guardando cada paso firme con su respectivo commit.
 
-Muchos bloqueos no son técnicos.
+### 3. Validar y testear
 
-Son problemas de:
-- organización
-- saturación mental
-- exceso de objetivos simultáneos
+Asegúrate de que la funcionalidad cumpla con su propósito y no rompa procesos existentes en tu sistema.
 
-El TODO.md ayuda muchísimo con eso.
+### 4. Hacer merge a `main`
 
----
+Una vez que todo funcione correctamente:
 
-# Qué NO hacer
-
-❌ Tener tareas gigantes
-
-"Hacer toda la API"
-
-❌ Tener 50 tareas activas
-
-❌ Programar sin prioridades
+- Integra la rama a `main`.
+- Elimina la rama temporal.
 
 ---
 
-# Recomendación profesional
+## 6. Planificar antes de tocar el teclado
 
-Mantén:
-- pocas tareas activas
-- objetivos claros
-- commits pequeños
-- progreso constante
+Antes de escribir la primera línea de código en un módulo:
 
-La consistencia vale más que la intensidad.
+- Identifica qué funcionalidades necesitas.
+- Divídelas en cambios lógicos diminutos.
+- Ordénalos de menor a mayor complejidad.
+
+Solo cuando tengas este mapa mental dibujado, abre el editor.
 
 ---
 
-# Filosofía final
+## 7. Completar cada cambio antes de pasar al siguiente
 
-Un proyecto avanza mejor cuando:
+La multitarea es el peor enemigo del desarrollador.
 
-ideas → organización → ejecución → commit
+Cada cambio lógico debe cerrarse por completo antes de abrir otro frente de trabajo.
 
-y no:
+Esto significa:
 
-ideas → caos → agotamiento → abandono
+- Código funcionando.
+- Tests aprobados.
+- Commit realizado.
 
-La organización también es una habilidad técnica.
+---
+
+## 8. Tu historial de Git debe contar una historia
+
+Cualquier desarrollador (o tú misma dentro de seis meses) debería poder leer el historial de `git log` y entender cronológicamente cómo fue cobrando vida el proyecto.
+
+Por ejemplo:
+
+- Crear modelo de base de datos.
+- Implementar lógica de inserción.
+- Diseñar interfaz gráfica de carga.
+- Agregar validación de datos en tiempo real.
+
+---
+
+## 9. El historial de commits es parte de la documentación
+
+Los mensajes de commit no son notas descartables.
+
+Registran tus decisiones de diseño técnico a lo largo del tiempo.
+
+Son el **"por qué"** detrás del **"qué"**.
+
+---
+
+## 10. Adapta la metodología a tu tiempo disponible
+
+La gran ventaja de trabajar con cambios lógicos pequeños es la flexibilidad.
+
+Si solo tienes 45 minutos libres para programar, no intentes hacer toda la base de datos.
+
+Elige un cambio lógico pequeño de tu `TODO.md`, termínalo, haz commit y cierra la laptop.
+
+Cuando vuelvas dentro de tres días, sabrás exactamente dónde te quedaste sin tener que reconstruir todo el contexto mental.
+
+---
+
+# Filosofía Final
+
+> El éxito de un proyecto personal no depende de tu velocidad, sino de tu consistencia.
+>
+> Al reducir la dispersión con un `TODO.md` y estructurar tus pasos mediante commits atómicos, transformas el caos del desarrollo autodidacta en un proceso de ingeniería limpio, profesional y sostenible.
