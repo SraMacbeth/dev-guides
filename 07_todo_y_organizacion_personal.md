@@ -8,7 +8,7 @@ Esta guía está diseñada para desarrolladores/as que trabajan de forma autóno
 
 ---
 
-# Parte 1: El `TODO.md` y el Foco Diario
+# Parte 1: El TODO.md como herramienta de enfoque
 
 Muchos desarrolladores cometen el mismo error cuando programan solos:
 
@@ -209,8 +209,8 @@ La gran ventaja de trabajar con cambios lógicos pequeños es la flexibilidad.
 
 Si solo tienes 45 minutos libres para programar, no intentes hacer toda la base de datos.
 
-Elige un cambio lógico pequeño de tu `TODO.md`, termínalo, haz commit y cierra la laptop.
-.
+Elige una única tarea de tu TODO.md, complétala, haz commit y cierra la laptop.
+
 La motivación es variable; la constancia se construye mediante hábitos. Trabajar de forma regular, aunque sea en sesiones breves, produce mejores resultados que depender de largas jornadas de trabajo esporádicas.
 
 ---
@@ -219,6 +219,6 @@ La motivación es variable; la constancia se construye mediante hábitos. Trabaj
 
 > El éxito de un proyecto personal no depende de tu velocidad, sino de tu consistencia.
 >
-> Al reducir la dispersión con un `TODO.md` y estructurar tus pasos mediante commits atómicos, transformas el caos del desarrollo autodidacta en un proceso de ingeniería limpio, profesional y sostenible.
+> No necesitas saber todas las tecnologías ni desarrollar proyectos enormes. Lo verdaderamente importante es mantener un flujo de trabajo sostenible, practicar con proyectos reales y finalizar aquello que comienzas.
 >
-> **No necesitas saber todas las tecnologías ni desarrollar proyectos enormes. Lo verdaderamente importante es mantener un flujo de trabajo sostenible, practicar con proyectos reales y finalizar aquello que comienzas.**
+> Al reducir la dispersión con un `TODO.md` y estructurar tus pasos mediante commits atómicos, transformas el caos del desarrollo autodidacta en un proceso de ingeniería limpio, profesional y sostenible.
