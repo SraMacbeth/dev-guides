@@ -105,6 +105,8 @@ No confundas un commit atómico (un solo cambio lógico) con una funcionalidad c
 
 Un módulo CRUD completo normalmente se construye uniendo cuatro o cinco commits pequeños y estables.
 
+> **Consejo:** No esperes a tener una funcionalidad completa para sentir que avanzaste. Cada cambio lógico terminado y confirmado con un commit representa un progreso real y una base estable para seguir construyendo.
+
 ---
 
 ## 4. El patrón de diseño organiza el código, no los commits
@@ -158,6 +160,8 @@ Antes de escribir la primera línea de código en un módulo:
 
 Solo cuando tengas este mapa mental dibujado, abre el editor.
 
+Si dispones de poco tiempo para programar, elige un único cambio lógico de tu `TODO.md`. Incluso una sesión de 30 o 45 minutos puede ser suficiente para completar una tarea, realizar un commit y dejar el proyecto en un estado listo para continuar más adelante.
+
 ---
 
 ## 7. Completar cada cambio antes de pasar al siguiente
@@ -171,6 +175,8 @@ Esto significa:
 - Código funcionando.
 - Tests aprobados.
 - Commit realizado.
+
+Evita caer en el perfeccionismo. El objetivo no es que el cambio quede perfecto desde el primer intento, sino que funcione correctamente, esté validado y pueda mejorarse de forma iterativa en futuros commits.
 
 ---
 
@@ -204,8 +210,8 @@ La gran ventaja de trabajar con cambios lógicos pequeños es la flexibilidad.
 Si solo tienes 45 minutos libres para programar, no intentes hacer toda la base de datos.
 
 Elige un cambio lógico pequeño de tu `TODO.md`, termínalo, haz commit y cierra la laptop.
-
-Cuando vuelvas dentro de tres días, sabrás exactamente dónde te quedaste sin tener que reconstruir todo el contexto mental.
+.
+La motivación es variable; la constancia se construye mediante hábitos. Trabajar de forma regular, aunque sea en sesiones breves, produce mejores resultados que depender de largas jornadas de trabajo esporádicas.
 
 ---
 
@@ -214,3 +220,5 @@ Cuando vuelvas dentro de tres días, sabrás exactamente dónde te quedaste sin 
 > El éxito de un proyecto personal no depende de tu velocidad, sino de tu consistencia.
 >
 > Al reducir la dispersión con un `TODO.md` y estructurar tus pasos mediante commits atómicos, transformas el caos del desarrollo autodidacta en un proceso de ingeniería limpio, profesional y sostenible.
+>
+> **No necesitas saber todas las tecnologías ni desarrollar proyectos enormes. Lo verdaderamente importante es mantener un flujo de trabajo sostenible, practicar con proyectos reales y finalizar aquello que comienzas.**
